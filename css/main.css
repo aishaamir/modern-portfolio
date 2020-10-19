@@ -1,0 +1,284 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .menu-btn .btn-line {
+    background: #fff;
+    margin: 0 0 5px 0;
+    width: 28px;
+    border-radius: 5px;
+    height: 3px;
+    transition: all 0.5s ease-out; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.close .btn-line:nth-child(2) {
+      opacity: 0; }
+    .menu-btn.close .btn-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px); }
+
+.menu {
+  position: fixed;
+  width: 100%;
+  opacity: 0.9;
+  top: 0;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100vh;
+    float: left;
+    overflow: hidden; }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: #373737;
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    background: #444;
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 200px;
+      height: 200px;
+      background: url("../img/download (1).png") center center no-repeat;
+      border-radius: 50%;
+      border: solid 3px #eeca1e; }
+  .menu .nav-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-out; }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0); }
+    .menu .nav-item.current > a {
+      color: #eeca1e; }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 400;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.5s ease-out; }
+    .menu .nav-link:hover {
+      color: #eeca1e; }
+
+.nav-item:nth-child(1) {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2) {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3) {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4) {
+  transition-delay: 0.4s; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #444;
+  color: #fff;
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5; }
+  body#bg-img {
+    background: url(../img/pexels-negative-space-169573.jpg);
+    background-attachment: fixed;
+    background-size: cover; }
+    body#bg-img:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      background: rgba(68, 68, 68, 0.7); }
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  margin: 0; }
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
+    font-size: 6rem; }
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
+    padding: 0.2rem 1rem;
+    margin-bottom: 2rem;
+    background: rgba(73, 73, 73, 0.5); }
+
+a {
+  color: white;
+  text-decoration: none; }
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2; }
+
+.text-secondary {
+  color: #eeca1e; }
+
+main {
+  padding: 4rem;
+  min-height: calc(100vh - 60px); }
+  main .icons {
+    margin-top: 1rem; }
+  main a {
+    padding: 0.4rem; }
+    main a:hover {
+      color: #eeca1e;
+      transition: all 0.5s ease-out; }
+  main#home {
+    overflow: hidden; }
+    main#home h1 {
+      margin-top: 20vh; }
+
+.about-info {
+  display: grid;
+  gap: 30px;
+  grid-template-areas: 'bioimg bio bio' 'job1 job2 job3';
+  grid-template-columns: 1fr 1fr 1fr; }
+  .about-info .bio-img {
+    grid-area: bioimg;
+    border-radius: 50%;
+    border: 3px solid #eeca1e;
+    margin: auto; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  .about-info .job-1 {
+    grid-area: job1; }
+  .about-info .job-2 {
+    grid-area: job2; }
+  .about-info .job-3 {
+    grid-area: job3; }
+  .about-info .job {
+    background: #515151;
+    padding: 0.5rem;
+    border-bottom: #eeca1e 5px solid; }
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem; }
+  .projects img {
+    width: 100%;
+    height: 300px;
+    border: white solid 3px; }
+    .projects img:hover {
+      opacity: 0.5;
+      border-color: #eeca1e;
+      transition: all 0.5s ease-out; }
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 1rem; }
+  .contact div {
+    font-size: 2rem;
+    padding: 1.5rem 2.5rem;
+    border: 3px #fff solid;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .contact div:hover {
+      transform: scale(1.05);
+      background: #eeca1e;
+      color: #000; }
+      .contact div:hover span {
+        color: #000; }
+
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  margin-left: 1rem; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #eeca1e;
+    color: #000; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
+
+.btn-light {
+  background: #c4c4c4;
+  color: #333; }
+
+#menu-footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #2b2b2b;
+  color: #fff;
+  height: 60px; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+      font-size: 25px; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100%, 0, 0);
+    font-size: 23px; }
+  .menu-branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0); }
+    .menu-branding .portrait {
+      width: 120px;
+      height: 120px;
+      background-size: 150px; }
+  .about-info {
+    grid-template-areas: 'bioimg' 'bio' 'job1' 'job2' 'job3';
+    grid-template-columns: 1fr; }
+    .about-info .bio-img {
+      height: 120px;
+      width: 120px; }
+    .about-info .bio {
+      font-size: 1.1rem; }
+  .contact div {
+    font-size: 20px;
+    padding: 1.2rem; } }
+
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh; } }
